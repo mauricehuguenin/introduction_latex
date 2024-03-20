@@ -1,0 +1,84 @@
+\documentclass{agujournal2019}
+\usepackage{ragged2e} \justifying \linenumbers % justify text & line numbers
+\usepackage{url} \usepackage{tcolorbox} % fix any errors with URLs in refs & fit box around text
+\usepackage{bm} \usepackage{lipsum} \usepackage{lineno} \usepackage{soul} \usepackage{amsmath} % bold math symbols, dummy text, 2 line spacing, line numbers and math symbols
+\usepackage[utf8]{inputenc} % for \nocite{} references
+
+\journalname{Geophysical Research Letters}
+\begin{document}
+\title{My first paper in LaTeX}
+%  Authors and affiliations ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+\authors{Maurice F. Huguenin\affil{1,2}}
+\affiliation{1}{Centre for Marine Science and Innovation, University of New South Wales, Sydney, NSW, Australia}
+\affiliation{2}{ARC Australian Centre for Excellence in Antarctic Science, University of New South Wales, Sydney, NSW, Australia}
+\correspondingauthor{Maurice F. Huguenin}{m.huguenin-virchaux@unsw.edu.au}
+\begin{keypoints}
+\item Key Point Nr. 1
+\item Key Point Nr. 2
+\item Key Point Nr. 3
+\end{keypoints}
+
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+\begin{abstract}
+\lipsum[5]
+\end{abstract} 
+
+\section{Plain language summary}
+Text here.
+\pagebreak
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ %
+\section{Introduction} \label{sec:intro}
+\citeA{huguenin2020frequency} suggest that current climate models do not ...
+
+vs. 
+
+Current climate models do not ... \cite{huguenin2020frequency}.
+
+%  Figure 
+\begin{figure}[!htb] 
+    \centering \includegraphics[width=.25\textwidth]{crown.png}
+	\caption{This is the caption for the picture.}
+	\label{fig:calm}
+\end{figure}
+
+In this section \ref{sec:intro} we can also reference Fig. \ref{fig:calm}.
+
+% Equation
+We can write the equation of special relativity as
+\begin{equation}
+    E = m \cdot c^2
+    \label{eq:einstein}
+\end{equation}
+
+... and we can reference Equation \ref{eq:einstein} here.
+
+Let's write some more symbols, e.g., $\omega$, $\Omega$, $\pi$, ...
+
+Alternatively, we can have the same equation inline as $E = m \cdot c^2$, whereas $E$ is the energy (J), ...
+
+% Table
+\begin{table}
+ \caption{This is the caption for the table.}
+ \centering
+ \begin{tabular}{l l}
+ \hline
+    AABW	& Antarctic Bottom Water\\
+    ACC		& Antarctic Circumpolar Current\\
+ \hline
+\end{tabular}
+\label{tab:abbreviations}
+\end{table}
+The abbreviations can be found in Table \ref{tab:abbreviations}.
+
+\section{Methods} 
+\subsection{Subsection}
+\subsubsection{Subsubsection}
+\section{Results}
+\section{Discussion and Conclusions}
+\section{Open Research} 
+\section{Acknowledgments} We thank ... and two reviewers for their valuable input.
+\section{Competing Interests} The authors declare no competing interests.
+
+\pagebreak\bibliography{references_all.bib}
+\end{document}
